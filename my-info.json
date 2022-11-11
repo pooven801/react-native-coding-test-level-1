@@ -1,0 +1,10 @@
+{
+    "colors": [
+        "turquoise",
+        "green",
+        "red"
+    ],
+    "country": "Greece",
+    "will_i_visit_in_5_years": true,
+    "favourite_food": ["nasi lemak", "chicken curry", "tau fu fah"]
+}
