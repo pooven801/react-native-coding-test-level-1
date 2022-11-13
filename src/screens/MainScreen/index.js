@@ -3,7 +3,6 @@ import { View, Text, TouchableOpacity } from "react-native";
 import styles from "./styles";
 
 const MainScreen = ({ navigation }) => {
-  const { navigation } = props;
 
   return (
     <View style={styles.mainContainer}>
