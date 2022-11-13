@@ -9,7 +9,7 @@ const PokemonDetail = ({ route, navigation }) => {
     const [data, setData] = useState({ name: "" })
     const [loading, setLoading] = useState(false)
 
-    const getList = async (params) => {
+    const getList = async () => {
         setLoading(true)
         const response = await fetch(route.params.item.item.url, {
             method: 'GET',
