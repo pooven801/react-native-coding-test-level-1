@@ -3,17 +3,20 @@ import { SafeAreaView, FlatList, Platform } from 'react-native';
 import styles from './styles';
 import { Header, ItemCard } from "@components";
 import * as Services from "@services";
+import { useSelector, useDispatch } from 'react-redux';
+import * as PokemonDataAction from "@redux/actions/PokemonDataAction";
 
 const ViewCatalog = ({ navigation }) => {
 
-    const [data, setData] = useState({ results: [] })
     const [pageOffsetLimit, setPageOffsetLimit] = useState({ offset: 0, limit: 10 })
     const [loadMore, setLoadMore] = useState(false)
-
+    const dataAsync = useSelector((state) => state.pokemonList.data);
+    const dispatch = useDispatch();
+    
     const getList = async (params) => {
         setLoadMore(true)
         Services.getPokemonList({ "offset": params.offset, "limit": params.limit }).then(res => {
-            setData({ ...res, results: data.results.concat(res.results) })
+            dispatch(PokemonDataAction.getDataSync({ ...res, results: dataAsync.results.concat(res.results) }))
             setLoadMore(false)
         });
     };
@@ -37,7 +40,7 @@ const ViewCatalog = ({ navigation }) => {
 
         let newOffSet = pageOffsetLimit.offset + 10
 
-        if (newOffSet > data.count) return;
+        if (newOffSet > dataAsync.count) return;
 
         getList({ ...pageOffsetLimit, "offset": newOffSet })
 
@@ -48,14 +51,14 @@ const ViewCatalog = ({ navigation }) => {
             <Header onPress={() => {
                 navigation.goBack()
             }} />
-            {data != null && <FlatList
+            {dataAsync != null && <FlatList
                 scrollEventThrottle={1}
-                data={data.results}
+                data={dataAsync.results}
                 keyExtractor={(item, index) => index}
                 renderItem={renderItem}
                 onEndReachedThreshold={Platform.OS === 'ios' ? 0 : 0.5}
                 onEndReached={() => {
-                    if (!loadMore && pageOffsetLimit.offset < data.count)
+                    if (!loadMore && pageOffsetLimit.offset < dataAsync.count)
                         onLoadMore();
                 }}
             />}
