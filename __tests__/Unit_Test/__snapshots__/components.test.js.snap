@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot: Component > Header 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#7a8b8b",
+      "borderRadius": 5,
+      "height": 30,
+      "justifyContent": "center",
+      "margin": 20,
+      "opacity": 1,
+      "width": 80,
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "white",
+        "fontSize": 16,
+        "fontWeight": "bold",
+      }
+    }
+  >
+    Back
+  </Text>
+</View>
+`;
+
+exports[`Snapshot: Component > ItemCard 1`] = `
+<View
+  style={
+    {
+      "alignSelf": "center",
+      "backgroundColor": "#525c5d",
+      "borderRadius": 20,
+      "height": 375,
+      "marginBottom": 10,
+      "width": "90%",
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "alignSelf": "center",
+        "color": "white",
+        "fontSize": 30,
+        "paddingTop": 20,
+      }
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
+exports[`Snapshot: Component > ItemSubCard 1`] = `
+<View
+  style={
+    {
+      "alignSelf": "center",
+      "backgroundColor": "#7a8b8b",
+      "borderRadius": 10,
+      "marginBottom": 10,
+      "minHeight": 30,
+      "width": "90%",
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "#e6f3f4",
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "padding": 10,
+      }
+    }
+  >
+    
+  </Text>
+</View>
+`;

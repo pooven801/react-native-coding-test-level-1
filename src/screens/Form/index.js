@@ -64,6 +64,7 @@ const Form = () => {
     <View style={styles.mainContainer}>
       <View style={styles.inputContainer}>
         <TextInput
+         testID="UserName"
           style={styles.inputFont}
           onChangeText={(text) =>
             setFormInput({
@@ -80,6 +81,7 @@ const Form = () => {
 
       <View style={styles.inputContainer}>
         <TextInput
+         testID="Email"
           style={styles.inputFont}
           onChangeText={(text) => validateEmail(text)}
           value={formInput.email}
@@ -118,6 +120,7 @@ const Form = () => {
       </TouchableOpacity>
 
       <TouchableOpacity
+        testID="SubmitBtn"
         onPress={() => {
           submitForm();
         }}
